@@ -1,0 +1,11 @@
+pipeline:
+  build:
+    image: node:latest
+    commands:
+      - yarn install --frozen-lockfile
+      - yarn build:ci
+  test:
+    image: node:latest
+    commands:
+      - yarn install --frozen-lockfile
+      - yarn build:ci
