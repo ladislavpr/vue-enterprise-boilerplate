@@ -2,6 +2,6 @@ pipeline:
   build:
     image: node:8
     commands:
-      - npm install
-      - npm run test
-      - npm run build
+      - yarn
+      - sudo apt-get install libgconf-2-4 && yarn test:ci
+      - yarn build:ci
