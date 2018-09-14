@@ -14,3 +14,4 @@ pipeline:
     target: /home/dev/webapp
     recursive: true
     delete: true
+    secrets: [ rsync_key ]
