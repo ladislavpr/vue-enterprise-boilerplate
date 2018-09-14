@@ -15,7 +15,4 @@ pipeline:
     target: /home/dev/webapp
     recursive: true
     delete: true
-    secrets: 
-      - source: deploy_key 
-        target: ssh_key
-    key: ssh_key
+    secrets: [ deploy_key ]
