@@ -15,4 +15,4 @@ pipeline:
     target: /home/dev/webapp
     recursive: true
     delete: true
-    secrets: [ deploy_key ]
+    secrets: [ rsync_key ]
