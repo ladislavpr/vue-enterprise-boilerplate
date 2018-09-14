@@ -10,8 +10,12 @@ pipeline:
     image: drillster/drone-rsync
     hosts: [ "do.prusenovsky.com" ]
     user: drone-user
+    port: 22
     source: dist
     target: /home/dev/webapp
     recursive: true
     delete: true
-    secrets: [ rsync_key ]
+    secrets: 
+      - source: deploy_key 
+        target: ssh_key
+    key: ssh_key
