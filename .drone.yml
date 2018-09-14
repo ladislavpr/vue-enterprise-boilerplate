@@ -5,3 +5,12 @@ pipeline:
       - yarn
       - sudo apt-get install libgconf-2-4 && yarn test:ci
       - yarn build:ci
+
+  deploy:
+    image: drillster/drone-rsync
+    hosts: [ "do.prusenovsky.com" ]
+    user: drone-user
+    source: dist
+    target: /home/dev/webapp
+    recursive: true
+    delete: true
