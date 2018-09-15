@@ -7,7 +7,7 @@ pipeline:
       - ./node_modules
     # Mount the cache volume, needs "Trusted"
     volumes:
-      - /tmp/cache:/cache
+      - /home/dev/tmp/cache:/cache
 
   build:
     image: node:8
@@ -23,7 +23,7 @@ pipeline:
       - ./node_modules
     # Mount the cache volume, needs "Trusted"
     volumes:
-      - /tmp/cache:/cache
+      - /home/dev/tmp/cache:/cache
 
   deploy:
     image: drillster/drone-rsync
