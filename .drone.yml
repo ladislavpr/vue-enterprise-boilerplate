@@ -30,7 +30,7 @@ pipeline:
     hosts: [ "do.prusenovsky.com" ]
     user: drone-user
     port: 22
-    source: dist/*
+    source: dist/
     target: /home/dev/webapp/
     recursive: true
     delete: true
