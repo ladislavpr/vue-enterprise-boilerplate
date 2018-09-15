@@ -1,29 +1,11 @@
 pipeline:
 
-  restore-cache:
-    image: drillster/drone-volume-cache
-    restore: true
-    mount:
-      - ./node_modules
-    # Mount the cache volume, needs "Trusted"
-    volumes:
-      - /home/dev/tmp/cache:/cache
-
   build:
     image: node:8
     commands:
       - yarn
       - sudo apt-get install libgconf-2-4 && yarn test:ci
       - yarn build:ci
-
-  rebuild-cache:
-    image: drillster/drone-volume-cache
-    rebuild: true
-    mount:
-      - ./node_modules
-    # Mount the cache volume, needs "Trusted"
-    volumes:
-      - /home/dev/tmp/cache:/cache
 
   deploy:
     image: drillster/drone-rsync
